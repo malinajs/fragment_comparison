@@ -1,0 +1,25 @@
+<script>
+  export let value = 0;
+
+  let chip = {
+    value, child: [], index: 0,
+    set: v => {
+      chip.value = value = v;
+      chip.child.forEach(f => f());
+    }
+  };
+  $context.chip = chip;
+  $: value, chip.set(value);
+</script>
+
+<div>
+  <slot/>
+</div>
+
+
+<style>
+  div {
+    border: 1px dotted gray;
+    padding: 4px;
+  }
+</style>

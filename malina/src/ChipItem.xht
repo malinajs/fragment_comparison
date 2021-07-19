@@ -1,0 +1,29 @@
+<script>
+  let chip = $context.chip;
+  let current = chip.index++;
+
+  chip.child.push($$apply);
+  $onDestroy(() => chip.child = chip.child.filter(f => f != $$apply));
+</script>
+
+<span @click={chip.set(current)} class:active={chip.value == current}>
+    <slot/>
+</span>
+
+<style>
+    span {
+        color: black;
+        background-color: #e0e0e0;
+        border-color: #e0e0e0;
+        border-radius: 16px;
+        padding: 6px 10px 6px 10px;
+        margin: 4px;
+        cursor: pointer;
+        line-height: 36px;
+    }
+    .active {
+        color: white;
+        background-color: #6200ea;
+        border-color: #6200ea;
+    }
+</style>

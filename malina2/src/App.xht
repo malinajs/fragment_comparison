@@ -1,0 +1,19 @@
+<script>
+  let value = 1;
+</script>
+
+<h3>Book an appointment <small>({value})</small></h3>
+
+<Chip :value>
+  <b>Morning</b>
+  <ChipItem>10:00</>
+  <ChipItem>11:00</>
+  <br/>
+  <b>Afternoon</b>
+  <ChipItem>13:00</>
+  <ChipItem>15:00</>
+  <ChipItem>17:00</>
+  <br/>
+  <ChipButton @click={value=0}>Morning</>
+  <ChipButton @click={value=2}>Afternoon</>
+</Chip>

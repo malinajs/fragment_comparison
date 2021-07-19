@@ -1,0 +1,45 @@
+<script>
+  export let value = 0;
+  let index = 0;
+</script>
+
+<div>
+  <slot/>
+</div>
+
+{#fragment:item export}
+  {* const current = index++}
+  <span @click={value=current} class:active={value == current}>
+    <slot/>
+  </span>
+{/fragment}
+
+{#fragment:button export}
+  {* let count = 0; }
+  <button @@click @click={count++}>
+    <slot/> ({count})
+  </button>
+{/fragment}
+
+
+<style>
+  div {
+    border: 1px dotted gray;
+    padding: 4px;
+  }
+  span {
+    color: black;
+    background-color: #e0e0e0;
+    border-color: #e0e0e0;
+    border-radius: 16px;
+    padding: 6px 10px 6px 10px;
+    margin: 4px;
+    cursor: pointer;
+    line-height: 36px;
+  }
+  .active {
+    color: white;
+    background-color: #6200ea;
+    border-color: #6200ea;
+  }
+</style>

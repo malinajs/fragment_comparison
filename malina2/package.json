@@ -1,0 +1,18 @@
+{
+  "name": "malina-app",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "rollup -c && uglifyjs public/bundle.js -o public/bundle.js -m -c",
+    "dev": "rollup -cw"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "derver": "^0.2.2",
+    "malinajs": "0.6.40",
+    "rollup": "^2.33.1",
+    "rollup-plugin-css-only": "^3.1.0",
+    "uglify-js": "^3.13.10"
+  },
+  "dependencies": {}
+}
